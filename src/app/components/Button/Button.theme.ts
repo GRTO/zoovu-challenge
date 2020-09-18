@@ -12,7 +12,7 @@ export const ButtonStyles = () => {
       justify-content: center;
       align-items: center;
       min-height: 2.5rem;
-      max-width: 7.5rem;
+      min-width: 7.5rem;
       border: 0.125rem solid ${secondary['gray-2']};
       border-radius: 2.5rem;
       cursor: pointer;

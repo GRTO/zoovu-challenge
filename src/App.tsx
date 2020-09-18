@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import history from 'utils/history';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from 'styles/theme';
-import { Button } from 'app/components/Button/Button';
 import { store, StoreContext } from 'store';
+import { AppRouter } from 'app/routes/Routes';
 
 const AppWrapper = styled.div<{}>({
   display: 'flex',
@@ -19,9 +19,7 @@ const App = () => (
     <ThemeProvider theme={theme}>
       <AppWrapper>
         <Router history={history}>
-          <Button onClick={() => console.log('Here')}>
-            <div>My Button</div>
-          </Button>
+          <AppRouter />
         </Router>
       </AppWrapper>
     </ThemeProvider>
