@@ -1,7 +1,10 @@
-export class UserStore {
-  public userName: string = '';
-  private userLogged: boolean = false;
 
+import { observable, action } from 'mobx';
+export class UserStore {
+  @observable public userName: string = '';
+  @observable private userLogged: boolean = false;
+
+  @action
   public setName(name: string) {
     if (name !== '') {
       this.userLogged = true;
@@ -9,6 +12,7 @@ export class UserStore {
     }
   }
 
+  @action
   public isUserLogged() {
     return this.userLogged;
   }

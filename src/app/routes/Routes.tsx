@@ -35,7 +35,6 @@ interface IProtectedRoute {
 const ProtectedRoute: React.FC<IProtectedRoute> = ({ Component, path, exact = false }) => {
   const { User } = useStoreContext();
   const isAuthorized = User.isUserLogged();
-  console.log('isAuthorized', isAuthorized);
   const message = 'Routing to Welcome Screen';
   return (
     <Route
@@ -62,7 +61,6 @@ const ProtectedRoute: React.FC<IProtectedRoute> = ({ Component, path, exact = fa
 
 export const AppRouter: React.FC = () => (
   <Switch>
-    {console.log('Here')}
     {routes.map((route: IAppRoute) => {
       return route.isProtected ? (
         <ProtectedRoute key={route.slug} exact path={route.path} Component={route.component} />
@@ -70,6 +68,6 @@ export const AppRouter: React.FC = () => (
         <Route key={route.slug} exact path={route.path} component={route.component} />
       );
     })}
-    <Route component={() => <Redirect to={ROUTES_URLS.WELCOME_PATH} />} />
+    <Redirect to={ROUTES_URLS.WELCOME_PATH} />
   </Switch>
 );

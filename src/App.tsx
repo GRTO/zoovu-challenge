@@ -1,11 +1,11 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from '@emotion/styled';
-import history from 'utils/history';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from 'styles/theme';
 import { store, StoreContext } from 'store';
 import { AppRouter } from 'app/routes/Routes';
+import { Provider } from 'mobx-react';
 
 const AppWrapper = styled.div<{}>({
   display: 'flex',
@@ -16,13 +16,15 @@ const AppWrapper = styled.div<{}>({
 
 const App = () => (
   <StoreContext.Provider value={store}>
-    <ThemeProvider theme={theme}>
-      <AppWrapper>
-        <Router history={history}>
-          <AppRouter />
-        </Router>
-      </AppWrapper>
-    </ThemeProvider>
+    <Provider {...store}>
+      <ThemeProvider theme={theme}>
+        <AppWrapper>
+          <Router>
+            <AppRouter />
+          </Router>
+        </AppWrapper>
+      </ThemeProvider>
+    </Provider>
   </StoreContext.Provider>
 );
 export default App;

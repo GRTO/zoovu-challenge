@@ -7,7 +7,6 @@ import ArrowRightSVG from 'assets/images/arrow-right.svg';
 import { useStoreContext } from 'store';
 import { ROUTES_URLS } from 'app/routes/Routes';
 import { withRouter } from 'react-router-dom';
-import history from 'utils/history';
 
 const ContentButtonGo = () => {
   const buttonGameStyles = ButtonGameStyles();
@@ -19,7 +18,7 @@ const ContentButtonGo = () => {
   );
 };
 
-const Welcome = withRouter(() => {
+const Welcome = withRouter(({ history }) => {
   const welcomeStyles = WelcomeStyles();
   const { User } = useStoreContext();
   const placeholder = 'Your name here';
