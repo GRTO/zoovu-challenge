@@ -1,19 +1,33 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { ThemeProvider } from 'emotion-theming';
+import { theme } from 'styles/theme';
+import { store, StoreContext } from 'store';
+import { AppRouter } from 'app/routes/Routes';
+import { Provider } from 'mobx-react';
+import Layout from 'app/components/Layout/Layout';
 
 const AppWrapper = styled.div<{}>({
-  display: "flex",
-  flexDirection: "column",
+  display: 'flex',
+  flexDirection: 'column',
   flex: 1,
-  height: "100%",
+  height: '100%',
 });
 
-function App() {
-  return (
-    <AppWrapper>
-      <div css={{ color: "red" }}>Zuuvo Challenge</div>
-    </AppWrapper>
-  );
-}
-
+const App = () => (
+  <StoreContext.Provider value={store}>
+    <Provider {...store}>
+      <ThemeProvider theme={theme}>
+        <AppWrapper>
+          <Router>
+            <Layout>
+              <AppRouter />
+            </Layout>
+          </Router>
+        </AppWrapper>
+      </ThemeProvider>
+    </Provider>
+  </StoreContext.Provider>
+);
 export default App;
