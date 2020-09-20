@@ -1,11 +1,11 @@
 import React from 'react';
 import { ButtonStyles } from './Button.theme';
 
-interface IButton {
+export interface IButtonProps {
   onClick: () => void;
 }
 
-export const Button: React.FC<IButton> = ({ onClick, children }) => {
+export const Button: React.FC<IButtonProps> = ({ onClick, children }) => {
   const buttonStyles = ButtonStyles();
   return (
     <div css={buttonStyles.ButtonContainer} onClick={onClick}>

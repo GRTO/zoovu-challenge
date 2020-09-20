@@ -1,29 +1,11 @@
 import React from 'react';
+import { getCardIcon } from 'utils/cards';
 import { Icon } from '../Icon/Icon';
 import { CardGameStyles } from './CardGame.theme';
-import LetterZSVG from 'assets/images/zoovu-z.svg';
-import LetterOSVG from 'assets/images/zoovu-o.svg';
-import LetterVSVG from 'assets/images/zoovu-v.svg';
-import LetterUSVG from 'assets/images/zoovu-u.svg';
 
-interface ICardGameProps {
+export interface ICardGameProps {
   keyCard: string;
 }
-
-const getCardIcon = (keyCard: string) => {
-  switch (keyCard) {
-    case 'z':
-      return LetterZSVG;
-    case 'o':
-      return LetterOSVG;
-    case 'v':
-      return LetterVSVG;
-    case 'u':
-      return LetterUSVG;
-    default:
-      return null;
-  }
-};
 
 export const CardGame: React.FC<ICardGameProps> = ({ keyCard }) => {
   const letterIcon = getCardIcon(keyCard);
@@ -31,11 +13,11 @@ export const CardGame: React.FC<ICardGameProps> = ({ keyCard }) => {
   return (
     <>
       {letterIcon ? (
-        <div css={cardGameStyles.cardGameContainer}>
+        <div id={`card-id-${letterIcon}`} css={cardGameStyles.cardGameContainer}>
           <Icon src={letterIcon} size={{ height: '7rem', width: '7rem' }} />
         </div>
       ) : (
-        <div css={cardGameStyles.emptyCardGameContainer} />
+        <div id={`card-emtpy-id`} css={cardGameStyles.emptyCardGameContainer} />
       )}
     </>
   );
