@@ -21,6 +21,11 @@ And this is the final result.
 
 ![alt text](src/assets/images/app.gif)
 
+The mobile view
+
+![alt text](src/assets/images/mobile-view.jpg)
+
+
 > Note: I added some aditional animations or messages to the app.
 
 ## Run the project
