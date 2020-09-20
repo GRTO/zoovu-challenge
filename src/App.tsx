@@ -6,6 +6,7 @@ import { theme } from 'styles/theme';
 import { store, StoreContext } from 'store';
 import { AppRouter } from 'app/routes/Routes';
 import { Provider } from 'mobx-react';
+import Layout from 'app/components/Layout/Layout';
 
 const AppWrapper = styled.div<{}>({
   display: 'flex',
@@ -20,7 +21,9 @@ const App = () => (
       <ThemeProvider theme={theme}>
         <AppWrapper>
           <Router>
-            <AppRouter />
+            <Layout>
+              <AppRouter />
+            </Layout>
           </Router>
         </AppWrapper>
       </ThemeProvider>

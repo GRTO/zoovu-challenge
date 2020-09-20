@@ -14,7 +14,7 @@ export const CardGame: React.FC<ICardGameProps> = ({ keyCard }) => {
     <>
       {letterIcon ? (
         <div id={`card-id-${letterIcon}`} css={cardGameStyles.cardGameContainer}>
-          <Icon src={letterIcon} size={{ height: '7rem', width: '7rem' }} />
+          <Icon src={letterIcon} />
         </div>
       ) : (
         <div id={`card-emtpy-id`} css={cardGameStyles.emptyCardGameContainer} />

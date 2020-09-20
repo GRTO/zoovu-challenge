@@ -11,7 +11,8 @@ export const HeaderStyles = () => {
     headerContainer: css`
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: start;
+      min-height: 60px;
     `,
     nameContainer: css`
       color: ${primary.black};
@@ -23,8 +24,19 @@ export const HeaderStyles = () => {
       color: ${primary.purple};
       font-weight: bold;
     `,
+    gameStatus: css`
+      display: flex;
+      color: ${primary.green};
+      justify-content: end;
+      font-weight: bold;
+    `,
     iconStyle: css`
       padding: 0 5px;
+    `,
+    headerRight: css`
+      display: flex;
+      flex-direction: column;
+      jusity-content: space-between;
     `,
   };
 };

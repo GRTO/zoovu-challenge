@@ -15,6 +15,11 @@ export const InputStyles = () => {
       font-size: 16px;
       text-align: center;
       font-style: italic;
+      background-color: transparent;
+      
+      @media (min-width: 615px) {
+        width: 300px;
+      }
 
       &::placeholder {
         color: ${secondary['gray-1']};

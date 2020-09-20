@@ -44,11 +44,14 @@ export const Header: React.FC = observer(() => {
   return (
     <div css={headerStyles.headerContainer}>
       <div css={headerStyles.nameContainer}>{nameString}</div>
-      <div css={headerStyles.timerContainer}>
-        <Icon src={RegularClockSVG} css={headerStyles.iconStyle} />
-        <div>
-          Your Score: {seconds} second{seconds !== 1 ? 's' : ''}
+      <div css={headerStyles.headerRight}>
+        <div css={headerStyles.timerContainer}>
+          <Icon src={RegularClockSVG} css={headerStyles.iconStyle} />
+          <div>
+            Your Score: {seconds} second{seconds !== 1 ? 's' : ''}
+          </div>
         </div>
+        <div css={headerStyles.gameStatus}>{Gamer.isGameCompleted ? 'Congrats, You won!' : ''}</div>
       </div>
     </div>
   );

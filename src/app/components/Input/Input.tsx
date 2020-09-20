@@ -10,7 +10,7 @@ export const Input: React.FC<IInput> = ({ placeholder, onChange }) => {
   const inputStyles = InputStyles();
   return (
     <div css={inputStyles.inputWrapper}>
-      <input css={inputStyles.inputContainer} placeholder={placeholder} onChange={onChange} />
+      <input css={inputStyles.inputContainer} placeholder={placeholder} onChange={onChange} maxLength={15} />
     </div>
   );
 };

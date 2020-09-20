@@ -16,24 +16,30 @@ export const PickupArea: React.FC = observer(() => {
   }, [Gamer.sourceItemsChanged, Gamer.sourceItems]);
 
   return (
-    <div css={pickupAreaStyles.pickAreaContainer}>
-      {sourceItems.map((value, index) => (
-        <Droppable droppableId={`pickup-${value}`} isDropDisabled={true}>
-          {provided => (
-            <div ref={provided.innerRef} css={pickupAreaStyles.itemContainer(draggableAreaEmpty(value))}>
-              {getValueCard(value) !== 'x' ? (
-                <Draggable key={index} draggableId={`pickup-item-${value}`} index={index}>
-                  {provided => (
-                    <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                      <CardGame keyCard={getValueCard(value)} />
-                    </div>
-                  )}
-                </Draggable>
-              ) : null}
-            </div>
-          )}
-        </Droppable>
-      ))}
-    </div>
+    <>
+      <div css={pickupAreaStyles.pickupLabel}>
+        <div>Pick Up the right cards</div>
+        <div>The faster the better</div>
+      </div>
+      <div css={pickupAreaStyles.pickAreaContainer}>
+        {sourceItems.map((value, index) => (
+          <Droppable droppableId={`pickup-${value}`} isDropDisabled={true}>
+            {provided => (
+              <div ref={provided.innerRef} css={pickupAreaStyles.itemContainer(draggableAreaEmpty(value))}>
+                {getValueCard(value) !== 'x' ? (
+                  <Draggable key={index} draggableId={`pickup-item-${value}`} index={index}>
+                    {provided => (
+                      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <CardGame keyCard={getValueCard(value)} />
+                      </div>
+                    )}
+                  </Draggable>
+                ) : null}
+              </div>
+            )}
+          </Droppable>
+        ))}
+      </div>
+    </>
   );
 });
