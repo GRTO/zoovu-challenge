@@ -49,5 +49,5 @@ and you are going to get the following response in your terminal
 ## Build
 You can build the project just running
 ```
-npm run test
+npm run build
 ```
