@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build --prod --base-href",
+    "build": "react-app-rewired build --prod --base-href ./",
     "test": "react-app-rewired test --coverage",
     "eject": "react-app-rewired eject"
   },

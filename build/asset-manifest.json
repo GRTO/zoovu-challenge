@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7014d356.chunk.css",
+    "main.js": "./static/js/main.f1ee509c.chunk.js",
+    "main.js.map": "./static/js/main.f1ee509c.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.8db3bbf6.js",
+    "runtime-main.js.map": "./static/js/runtime-main.8db3bbf6.js.map",
+    "static/js/2.0bf33bd9.chunk.js": "./static/js/2.0bf33bd9.chunk.js",
+    "static/js/2.0bf33bd9.chunk.js.map": "./static/js/2.0bf33bd9.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.88a8a05d8692078ab193fb8c4202f1cb.js": "./precache-manifest.88a8a05d8692078ab193fb8c4202f1cb.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.7014d356.chunk.css.map": "./static/css/main.7014d356.chunk.css.map",
+    "static/js/2.0bf33bd9.chunk.js.LICENSE.txt": "./static/js/2.0bf33bd9.chunk.js.LICENSE.txt",
+    "static/media/arrow-right.svg": "./static/media/arrow-right.545dede7.svg",
+    "static/media/background.jpg": "./static/media/background.facbfb5f.jpg",
+    "static/media/image_opacity.png": "./static/media/image_opacity.6e85432f.png",
+    "static/media/regular_clock.svg": "./static/media/regular_clock.2dddf6f0.svg",
+    "static/media/zoovu-o.svg": "./static/media/zoovu-o.987e802d.svg",
+    "static/media/zoovu-u.svg": "./static/media/zoovu-u.509452d2.svg",
+    "static/media/zoovu-v.svg": "./static/media/zoovu-v.f04e5e7e.svg",
+    "static/media/zoovu-z.svg": "./static/media/zoovu-z.98d275b2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8db3bbf6.js",
+    "static/js/2.0bf33bd9.chunk.js",
+    "static/css/main.7014d356.chunk.css",
+    "static/js/main.f1ee509c.chunk.js"
+  ]
+}
