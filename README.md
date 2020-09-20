@@ -26,7 +26,7 @@ The mobile view
 ![alt text](src/assets/images/mobile-view.jpg)
 
 
-> Note: I added some aditional animations or messages to the app.
+> Note: I added some aditional animations or messages to the app. Moreover, If you want to play without running the project you can click in `build/i-want-to-play-a-game.html`. I did not want to add the build directory but with this you can play.
 
 ## Run the project
 
@@ -46,3 +46,8 @@ and you are going to get the following response in your terminal
 
 ![alt text](src/assets/images/tests.jpg)
 
+## Build
+You can build the project just running
+```
+npm run test
+```
