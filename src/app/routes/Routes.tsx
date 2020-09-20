@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Game from 'app/views/game/Game';
 import Welcome from 'app/views/welcome/Welcome';
-import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { useStoreContext } from 'store';
 
 export const ROUTES_URLS = {
-  WELCOME_PATH: '/welcome',
+  WELCOME_PATH: '/',
   GAME_PATH: '/game',
 };
 
@@ -60,14 +60,16 @@ const ProtectedRoute: React.FC<IProtectedRoute> = ({ Component, path, exact = fa
 };
 
 export const AppRouter: React.FC = () => (
-  <Switch>
-    {routes.map((route: IAppRoute) => {
-      return route.isProtected ? (
-        <ProtectedRoute key={route.slug} exact path={route.path} Component={route.component} />
-      ) : (
-        <Route key={route.slug} exact path={route.path} component={route.component} />
-      );
-    })}
-    <Redirect to={ROUTES_URLS.WELCOME_PATH} />
-  </Switch>
+  <HashRouter basename="/">
+    <Switch>
+      {routes.map((route: IAppRoute) => {
+        return route.isProtected ? (
+          <ProtectedRoute key={route.slug} exact path={route.path} Component={route.component} />
+        ) : (
+          <Route key={route.slug} exact path={route.path} component={route.component} />
+        );
+      })}
+      <Redirect to={ROUTES_URLS.WELCOME_PATH} />
+    </Switch>
+  </HashRouter>
 );

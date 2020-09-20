@@ -2,7 +2,7 @@
   "name": "zoovu-challenge",
   "version": "0.1.0",
   "homepage": ".",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build --prod --base-href",
     "test": "react-app-rewired test --coverage",
     "eject": "react-app-rewired eject"
   },
